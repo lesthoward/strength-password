@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strength Passowrd</title>
+    <!-- Normalize -->
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css'/>
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Klee+One:regular,600" rel="stylesheet" />
+    <!-- Style -->
+    <link rel="stylesheet" href="./style.css">
+    <!-- Script -->
+    <script src="./app.js" defer></script>
+    <!-- SEO meta tags -->
+    <meta name="author" content="Lester Howard">
+    <meta name="description" content="Password must meet complexity requirements">
+</head>
+<body>
+    <div class="container">
+        <form class="form">
+            <h1 class="form__title">Strength Password</h1>
+            
+
+            <div class="form__inner">
+                <input class="form__password" type="password" placeholder="Typing..."></input>
+
+                <div class="form__progressbar good" data-pass="Level">
+                    <div class="form__progress"></div>
+                </div>
+                
+
+                <ul class="form__requirements">
+                    <li class="form__item" id="characters">At least 6 characters</li>
+                    <li class="form__item" id="lowercase">One lowercase letter</li>
+                    <li class="form__item" id="uppercase">One uppercase letter</li>
+                    <li class="form__item" id="numbers">Numbers (0-9)</li>
+                    <li class="form__item" id="specials">Contains special characters (@./*?_-)</li>
+                </ul>
+
+                <button class="form__submit">Submit data</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

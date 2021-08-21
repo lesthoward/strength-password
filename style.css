@@ -1,0 +1,175 @@
+:root {
+    --font-family: 'Klee One', sans-serif;
+    --background-color: #1982C4;
+    --text-color: #000;
+    --text-contrast-color: #fff;
+    --wrapper-color: #fff;
+    --rgba-dark: rgba(0,0,0,.1);
+    --rgba-dark-high: rgba(0,0,0,.3);
+    --pseudo-circle: red;
+
+    --weak: #FF595E;
+    --medium: #E9EB9E;
+    --good: #5DB7DE;
+    --strong: #7CFFC4;
+}
+
+html {
+    font-size: 62.5%;
+}
+*, ::before,::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--background-color);
+    color: var(--text-color);
+    font-family: var(--font-family), arial;
+    font-size: 1.6rem;
+}
+
+
+h1 {
+    margin: 0;
+    margin-bottom: 2.5rem;
+}
+
+.container {
+    max-width: 90%;
+    margin: auto;
+}
+
+.form {
+    background: var(--wrapper-color) ;
+    max-width: 50rem;
+    margin: 4rem auto;
+    padding: 6rem 4rem;
+    border-radius: .5rem;
+    box-shadow: .5rem .5rem 1rem 1rem var(--rgba-dark);
+}
+
+.form__inner {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
+}
+
+.form__password {
+    /* font-size: 1rem; */
+    height: 5rem;
+    width: 100%;
+    padding: 2.5rem;
+    border: none;
+    /* border: .1rem solid ; */
+    border-radius: .3rem;
+    box-shadow: 0 0 0px 4px var(--rgba-dark);
+    transition: box-shadow .3s linear;
+    outline: none;
+}
+
+.form__password:focus {
+    box-shadow: .3rem .3rem .1rem var(--rgba-dark-high);
+    /* border-color: var(--background-color); */
+}
+
+.form__progressbar {
+    position: relative;
+    background: #f2f2f2;
+    color: var(--text-contrast-color);
+    font-weight: bold;
+    width: 100%;
+    height: 3rem;
+    border-radius: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border: .1rem solid var(--text-color);
+}
+
+.form__progressbar::after {
+    color: var(--text-color);
+    content: attr(data-pass);
+    font-size: 1.4rem;
+    z-index: 5;
+}
+
+.form__progressbar.weak .form__progress {
+    background: var(--weak);
+}
+
+.form__progressbar.medium .form__progress {
+    background: var(--medium);
+}
+
+.form__progressbar.good .form__progress {
+    background: var(--good);
+}
+
+.form__progressbar.strong .form__progress {
+    background: var(--strong);
+}
+
+.form__progress {
+    background: var(--weak);
+    position: absolute;
+    height: inherit;
+    width: 0;
+    left: 0;
+    border-radius: 3rem;
+    transform-origin: left;
+    transition: width 2s ease;
+}
+
+
+
+.form__requirements {
+    padding-left: 2rem;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    row-gap: .5rem;
+    
+}
+
+.form__item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    transition: all 5s ease ;
+}
+
+.form__item--active::before {
+    background: var(--pseudo-circle);
+    transition: all .2s ease ;
+}
+
+.form__item::before {
+    content: '';
+    position: absolute;
+    display: inline-block;
+    height: 1.5rem;
+    width: 1.5rem;
+    border-radius: 5rem;
+    left: -2.2rem;
+    border: .3rem solid var(--pseudo-circle);
+    /* transition: all 5s ease ; */
+}
+
+.form__submit {
+    color: var(--background-color);
+    background: transparent;
+    font-weight: bold;
+    cursor: pointer;
+    height: 5rem;
+    border: .1rem solid var(--background-color);
+    border-radius: .3rem;
+    transition: background .3s linear;
+}
+
+.form__submit:hover {
+    color: var(--text-contrast-color);
+    background: var(--background-color);
+}
